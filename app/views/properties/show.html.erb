@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+
+    <%= @property.status.humanize %>
+
+<p>
+  <strong class="text-teal-700">Name:</strong>
+  <% if @property.categories.any? %>
+
+<p>Categories: <%= render @property.categories %></p>
+
+<% end %>
+</p>
+
+<% if @property.property_cover_photo.attached? %>
+    <%= image_tag @property.property_cover_photo, class:"h-48 w-full rounded-t-lg object-cover object-center" %>
+<% end %>
+
+<p>
+  <strong>Address:</strong>
+  <%= @property.address %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @property.price %>
+</p>
+
+<p>
+  <strong>Rooms:</strong>
+  <%= @property.rooms %>
+</p>
+
+<p>
+  <strong>Bathrooms:</strong>
+  <%= @property.bathrooms %>
+</p>
+
+<p>
+  <strong>Parking spaces:</strong>
+  <%= @property.parking_spaces %>
+</p>
+
+<div id="prop-details" class="">
+  <strong>Details:</strong>
+  <%= simple_format @property.details %>
+</div>
+
+<button id="toggleDetails">show more</button>
+
+<%= link_to 'Edit', edit_property_path(@property) %> |
+<%= link_to 'Back', properties_path %>

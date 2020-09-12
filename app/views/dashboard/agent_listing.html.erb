@@ -1,0 +1,12 @@
+<%= render 'top_nav' %>
+<div class="flex flex-row h-full">
+  <!-- Sidebar -->
+   <%= render 'side_nav' %>
+
+      <div class="px-16 py-4 text-gray-700 bg-gray-200 h-full w-screen relative">
+        <!-- Content -->
+<%= link_to 'New Property', new_property_path %>
+
+        <%= render 'properties/index', obj: @properties %>
+      </div>
+</div>
