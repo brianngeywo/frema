@@ -1,7 +1,6 @@
 class Category < ApplicationRecord
     
-    has_many :property_categories
-    has_many :properties, through: :property_categories
+    has_many :properties
     validates :name, presence: true, uniqueness: true
     
     

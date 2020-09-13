@@ -7,6 +7,7 @@ class CreateProperties < ActiveRecord::Migration[6.0]
       t.integer :bathrooms
       t.integer :parking_spaces
       t.text :details
+      t.integer :category_id
       t.integer :status, default: 0
       #Ex:- :default =>''
 

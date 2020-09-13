@@ -2,16 +2,11 @@
 
 
     <%= @property.status.humanize %>
-
 <p>
   <strong class="text-teal-700">Name:</strong>
-  <% if @property.categories.any? %>
 
-<p>Categories: <%= render @property.categories %></p>
 
-<% end %>
 </p>
-
 <% if @property.property_cover_photo.attached? %>
     <%= image_tag @property.property_cover_photo, class:"h-48 w-full rounded-t-lg object-cover object-center" %>
 <% end %>
@@ -20,6 +15,7 @@
   <strong>Address:</strong>
   <%= @property.address %>
 </p>
+<p>Categories: <%= render @property.category if @property.category.present? %></p>
 
 <p>
   <strong>Price:</strong>

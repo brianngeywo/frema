@@ -11,10 +11,8 @@
     </div>
   <% end %>
 <%= form.select :status, Property.statuses.keys %>
-<%= form.collection_check_boxes :category_ids, Category.all, :id, :name do |cb| %>
-  <% cb.label(class: "checkbox-inline input_checkbox") {cb.check_box(class: "checkbox") + cb.text} %>
-<% end %>
 
+<%= form.select :category_id, options_from_collection_for_select(Category.all, :id, :name), :prompt => "Select Clients", :multiple => true %>
 
   <div class="field">
     <%= form.file_field :property_cover_photo %>

@@ -5,6 +5,7 @@ class PropertiesController < ApplicationController
   # GET /properties.json
   def index
     @properties = Property.all
+    @properties = @properties.where(category_id: params[:category_id]) if params[:category_id].present?
   end
 
   def rentals
@@ -76,6 +77,6 @@ class PropertiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def property_params
-      params.require(:property).permit(:address, :price, :rooms, :bathrooms, :parking_spaces, :details, :status, :property_cover_photo, category_ids: [ ] )
+      params.require(:property).permit(:address, :price, :rooms, :bathrooms, :parking_spaces, :details, :status, :property_cover_photo, :category_id )
     end
 end

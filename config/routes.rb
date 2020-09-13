@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'dashboard/property_bookings'
   resources :categories
   resources :properties
+  root to: "properties#index"
   get '/rentals', to: 'properties#rentals', as: 'rentals'
   get '/on_sale', to: 'properties#on_sale', as: 'on_sale'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
